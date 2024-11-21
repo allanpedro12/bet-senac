@@ -1,15 +1,10 @@
 const { Sequelize } = require('sequelize')
 
-const sequelize = new Sequelize(
-    'apostas', 
-    'root', 
-    'senac123', 
-    {
-        host: 'localhost',
-        dialect: 'mysql'
-    }
-)
-
+const sequelize = new Sequelize({
+   dialect: 'sqlite', 
+   storage: './database.sqlite'
+}) 
+ 
 async function conectarBanco() {
     try {
         await sequelize.authenticate();
