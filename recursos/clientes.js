@@ -8,7 +8,7 @@ const validarCPF = require('../validadorCPF')
 const { Op } = require('sequelize')
 
 router.get('/', async (req, res) => {
-    const { page, pageSize } = req.query
+    const { nome, page, pageSize } = req.query
     const clientes = await paginate(
         Cliente,
          parseInt(page || 1)
