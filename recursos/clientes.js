@@ -5,6 +5,7 @@ const { paginate } = require('../paginacao')
 const { body } = require('express-validator')
 const validarRequisicao = require('../validacao')
 const validarCPF = require('../validadorCPF')
+const { Op } = require('sequelize')
 
 router.get('/', async (req, res) => {
     const { page, pageSize } = req.query
